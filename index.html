@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <title>LoopScreen</title>
+  </head>
+  <body>
+    <!-- CABEÇALHO -->
+    <header class="pywebview-drag-region" id="custom-titlebar">
+      <div id="titlebar-title">
+        <i
+          class="bi bi-infinity"
+          style="margin-right: 8px; color: var(--accent-color)"
+        ></i>
+        LoopScreen
+      </div>
+
+      <div id="titlebar-controls" class="no-drag">
+        <button id="btn-minimize" title="Minimizar">
+          <i class="bi bi-dash"></i>
+        </button>
+        <button id="btn-maximize" title="Maximizar">
+          <i class="bi bi-square"></i>
+        </button>
+        <button id="btn-close" title="Fechar"><i class="bi bi-x"></i></button>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+      <!-- TITULO DESTAQUE -->
+      <div id="main-title">
+        <h1>Configurações</h1>
+      </div>
+      <!-- TELAS E BOTÃO DE INÍCIO -->
+      <div id="screens_container">
+        <div id="start_button_wrapper">
+          <button id="start-button">
+            <i class="bi bi-play-fill"></i>
+            Iniciar
+          </button>
+        </div>
+        <div id="screens-wrapper">
+          <h3>Nenhuma tela adicionada (mín.: 2)</h3>
+        </div>
+      </div>
+
+      <!-- FORMULÁRIO PARA ADICIONAR NOVA TELA -->
+      <div id="add_new_screen_container">
+        <div id="title_wrapper"><h2>Nova tela</h2></div>
+        <div id="inputs-wrapper">
+          <div id="name_container">
+            <label for="screen-name">Nome da tela:</label>
+            <input type="text" id="screen-name" />
+          </div>
+
+          <div class="radio-group">
+            <input
+              type="radio"
+              name="screen-option"
+              id="URL"
+              value="url"
+              checked
+            />
+            <label for="URL">URL</label>
+
+            <input type="radio" name="screen-option" id="File" value="file" />
+            <label for="File">Arquivo</label>
+          </div>
+
+          <div id="container-url" style="display: block">
+            <input
+              type="text"
+              id="input-url"
+              placeholder="Ex: https://pavepe.com.br"
+            />
+          </div>
+
+          <div id="container-file" style="display: none">
+            <button id="btn-browse-file">Procurar</button>
+            <input
+              type="text"
+              id="input-file"
+              placeholder="Nenhum arquivo selecionado..."
+              readonly
+            />
+          </div>
+
+          <div id="seconds_container">
+            <label for="display-time">Tempo de exibição (segundos):</label>
+            <input type="number" id="display-time" />
+          </div>
+          <div id="add-bt-container">
+            <button id="add-screen-bt">Adicionar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- RODAPÉ COM BOTÃO DE TEMA -->
+    <footer>© 2026 Yure Souza. Todos os direitos reservados.</footer>
+    <button id="theme-toggle">
+      <i id="theme-icon" class="bi"></i>
+    </button>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
