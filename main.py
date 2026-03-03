@@ -46,7 +46,7 @@ class API:
 if __name__ == '__main__':
     api = API()
     
-    # 1. Abre a interface HTML do LoopScreen
+    # Abre a interface HTML do LoopScreen
     window = webview.create_window(
         title="Configuração - LoopScreen",
         url="index.html",
@@ -59,12 +59,11 @@ if __name__ == '__main__':
     api._window = window
     webview.start()
 
-    # 2. Inicia o Totem com a Playlist
+    # Inicia o Totem com a Playlist
     if api.configs:
         print("Iniciando o LoopScreen em tela cheia...")
         app = QApplication(sys.argv)
         
-        # Passamos a lista inteira de mídia (playlist) para o TotemWindow
         totem_app = TotemWindow(playlist=api.configs)
         totem_app.show()
         

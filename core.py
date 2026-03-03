@@ -90,7 +90,6 @@ class TotemWindow(QMainWindow):
             else:
                 # Se não é vídeo, tratamos como imagem
                 pixmap = QPixmap(media_value)
-                # Ajusta a foto para a tela sem amassar ou esticar
                 self.image_label.setPixmap(pixmap.scaled(self.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
                 self.stack.setCurrentWidget(self.image_label)
                 self.master_timer.start(duration_ms)
