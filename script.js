@@ -71,11 +71,17 @@ addScreenButton.addEventListener("click", () => {
   newScreen.dataset.duration = screenDuration;
 
   newScreen.innerHTML = `
-    <h4>${screenName}</h4>
-    <p>Duration: ${screenDuration}s</p>
-    <p>Source (${mediaType}): ${mediaValue}</p>
-  `;
+  <h4>${screenName}</h4>
+  <p>Duration: ${screenDuration}s</p>
+  <p>Source (${mediaType}): ${mediaValue}</p>
+  <button class="delete-btn" title="Excluir tela"><i class="bi bi-trash3-fill"></i></button>
+`;
   screensContainer.appendChild(newScreen);
+
+  const deleteBtn = newScreen.querySelector(".delete-btn");
+  deleteBtn.addEventListener("click", () => {
+    newScreen.remove();
+  });
 
   document.getElementById("screen-name").value = "";
   document.getElementById("display-time").value = "";
